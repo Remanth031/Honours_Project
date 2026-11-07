@@ -94,10 +94,10 @@ always @(posedge clk) begin
             aw_beat   <= 8'd0;
         end
         if (aw_active && s_axi_wvalid) begin
-            if (s_axi_wstrb[0]) fb_mem[aw_addr_r[ADDR_WIDTH-1:2] + aw_beat][ 7: 0] <= s_axi_wdata[ 7: 0];
-            if (s_axi_wstrb[1]) fb_mem[aw_addr_r[ADDR_WIDTH-1:2] + aw_beat][15: 8] <= s_axi_wdata[15: 8];
-            if (s_axi_wstrb[2]) fb_mem[aw_addr_r[ADDR_WIDTH-1:2] + aw_beat][23:16] <= s_axi_wdata[23:16];
-            if (s_axi_wstrb[3]) fb_mem[aw_addr_r[ADDR_WIDTH-1:2] + aw_beat][31:24] <= s_axi_wdata[31:24];
+            if (s_axi_wstrb[0]) fb_mem[(aw_addr_r[ADDR_WIDTH-1:2] + aw_beat) & (MEM_DEPTH-1)][ 7: 0] <= s_axi_wdata[ 7: 0];
+            if (s_axi_wstrb[1]) fb_mem[(aw_addr_r[ADDR_WIDTH-1:2] + aw_beat) & (MEM_DEPTH-1)][15: 8] <= s_axi_wdata[15: 8];
+            if (s_axi_wstrb[2]) fb_mem[(aw_addr_r[ADDR_WIDTH-1:2] + aw_beat) & (MEM_DEPTH-1)][23:16] <= s_axi_wdata[23:16];
+            if (s_axi_wstrb[3]) fb_mem[(aw_addr_r[ADDR_WIDTH-1:2] + aw_beat) & (MEM_DEPTH-1)][31:24] <= s_axi_wdata[31:24];
             if (s_axi_wlast)
                 aw_active <= 1'b0;
             else
@@ -159,7 +159,7 @@ end
 
 assign s_axi_rvalid = ar_active;
 assign s_axi_rid    = ar_id_r;
-assign s_axi_rdata  = fb_mem[ar_addr_r[ADDR_WIDTH-1:2] + ar_beat];
+assign s_axi_rdata  = fb_mem[(ar_addr_r[ADDR_WIDTH-1:2] + ar_beat) & (MEM_DEPTH-1)];
 assign s_axi_rresp  = 2'b00;
 assign s_axi_rlast  = ar_active && (ar_beat == ar_len_r);
 

@@ -1871,6 +1871,7 @@ axi_uart_top u_uart (
     .uart_tx_o      (uart_tx),
     .uart_rx_i      (uart_rx)
 );
+assign m05_axi_rlast = m05_axi_rvalid;
 // ---- M06: gpio ----
 gpio #(
     .DATA_WIDTH (DATA_WIDTH),

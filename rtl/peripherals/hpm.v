@@ -87,22 +87,6 @@ reg [31:0] cnt_setup_ovh;
 reg [31:0] cnt_irq_ovh;
 reg        hpm_enable;
 
-always @(posedge clk) begin
-    if (rst) begin
-        cnt_cpu_cycles <= 0; cnt_mem_reads  <= 0; cnt_mem_writes <= 0;
-        cnt_pixels_out <= 0; cnt_ar_active  <= 0; cnt_setup_ovh  <= 0;
-        cnt_irq_ovh    <= 0; hpm_enable     <= 0;
-    end else if (hpm_enable) begin
-        cnt_cpu_cycles <= cnt_cpu_cycles + 1;
-        if (ev_mem_read)    cnt_mem_reads  <= cnt_mem_reads  + 1;
-        if (ev_mem_write)   cnt_mem_writes <= cnt_mem_writes + 1;
-        if (ev_pixel_out)   cnt_pixels_out <= cnt_pixels_out + 1;
-        if (ev_ar_active)   cnt_ar_active  <= cnt_ar_active  + 1;
-        if (ev_setup)       cnt_setup_ovh  <= cnt_setup_ovh  + 1;
-        if (ev_irq_handling)cnt_irq_ovh    <= cnt_irq_ovh    + 1;
-    end
-end
-
 // ---- AXI4-Lite Write (CTRL register only writable) ----
 reg aw_latch_v; reg [ADDR_WIDTH-1:0] aw_addr_l; reg [ID_WIDTH-1:0] aw_id_l;
 reg w_latch_v;  reg [DATA_WIDTH-1:0] w_data_l;
@@ -116,8 +100,23 @@ assign s_axi_bresp   = 2'b00;
 
 always @(posedge clk) begin
     if (rst) begin
-        aw_latch_v <= 0; w_latch_v <= 0; bvalid_r <= 0; hpm_enable <= 0;
+        cnt_cpu_cycles <= 0; cnt_mem_reads  <= 0; cnt_mem_writes <= 0;
+        cnt_pixels_out <= 0; cnt_ar_active  <= 0; cnt_setup_ovh  <= 0;
+        cnt_irq_ovh    <= 0; hpm_enable     <= 0;
+        aw_latch_v     <= 0; w_latch_v      <= 0; bvalid_r        <= 0;
+        bid_r          <= 0; aw_addr_l      <= 0; aw_id_l         <= 0;
+        w_data_l       <= 0;
     end else begin
+        if (hpm_enable) begin
+            cnt_cpu_cycles <= cnt_cpu_cycles + 1;
+            if (ev_mem_read)    cnt_mem_reads  <= cnt_mem_reads  + 1;
+            if (ev_mem_write)   cnt_mem_writes <= cnt_mem_writes + 1;
+            if (ev_pixel_out)   cnt_pixels_out <= cnt_pixels_out + 1;
+            if (ev_ar_active)   cnt_ar_active  <= cnt_ar_active  + 1;
+            if (ev_setup)       cnt_setup_ovh  <= cnt_setup_ovh  + 1;
+            if (ev_irq_handling)cnt_irq_ovh    <= cnt_irq_ovh    + 1;
+        end
+
         if (!aw_latch_v && s_axi_awvalid) begin aw_latch_v <= 1; aw_addr_l <= s_axi_awaddr; aw_id_l <= s_axi_awid; end
         if (!w_latch_v  && s_axi_wvalid)  begin w_latch_v  <= 1; w_data_l  <= s_axi_wdata; end
         if (aw_latch_v && w_latch_v) begin
