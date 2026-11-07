@@ -1,0 +1,164 @@
+================================================================================
+      ARRAY RASTERIZER ACCELERATOR (AR) EXHAUSTIVE VERIFICATION SUITE           
+                         (125 COMPREHENSIVE TESTCASES)                          
+================================================================================
+
+
+>>> CATEGORY: Horizontal Lines <<<
+
+TEST 001: H-Line length=1                     | In: (10,22)->(11,22)                     | Pixels: Got    2 / Exp    2 | [PASS]
+TEST 002: H-Line length=2                     | In: (10,23)->(12,23)                     | Pixels: Got    3 / Exp    3 | [PASS]
+TEST 003: H-Line length=5                     | In: (10,24)->(15,24)                     | Pixels: Got    6 / Exp    6 | [PASS]
+TEST 004: H-Line length=10                    | In: (10,25)->(20,25)                     | Pixels: Got   11 / Exp   11 | [PASS]
+TEST 005: H-Line length=15                    | In: (10,26)->(25,26)                     | Pixels: Got   16 / Exp   16 | [PASS]
+TEST 006: H-Line length=25                    | In: (10,27)->(35,27)                     | Pixels: Got   26 / Exp   26 | [PASS]
+TEST 007: H-Line length=40                    | In: (10,28)->(50,28)                     | Pixels: Got   41 / Exp   41 | [PASS]
+TEST 008: H-Line length=75                    | In: (10,29)->(85,29)                     | Pixels: Got   76 / Exp   76 | [PASS]
+TEST 009: H-Line length=100                   | In: (10,30)->(110,30)                    | Pixels: Got  101 / Exp  101 | [PASS]
+TEST 010: H-Line length=150                   | In: (10,31)->(160,31)                    | Pixels: Got  151 / Exp  151 | [PASS]
+TEST 011: H-Line length=200                   | In: (10,32)->(210,32)                    | Pixels: Got  201 / Exp  201 | [PASS]
+TEST 012: H-Line length=300                   | In: (10,33)->(310,33)                    | Pixels: Got  301 / Exp  301 | [PASS]
+TEST 013: H-Line length=450                   | In: (10,34)->(460,34)                    | Pixels: Got  451 / Exp  451 | [PASS]
+TEST 014: H-Line length=500                   | In: (10,35)->(510,35)                    | Pixels: Got  501 / Exp  501 | [PASS]
+TEST 015: H-Line length=600                   | In: (10,36)->(610,36)                    | Pixels: Got  601 / Exp  601 | [PASS]
+
+>>> CATEGORY: Vertical Lines <<<
+
+TEST 016: V-Line length=1                     | In: (37,10)->(37,11)                     | Pixels: Got    2 / Exp    2 | [PASS]
+TEST 017: V-Line length=2                     | In: (38,10)->(38,12)                     | Pixels: Got    3 / Exp    3 | [PASS]
+TEST 018: V-Line length=5                     | In: (39,10)->(39,15)                     | Pixels: Got    6 / Exp    6 | [PASS]
+TEST 019: V-Line length=10                    | In: (40,10)->(40,20)                     | Pixels: Got   11 / Exp   11 | [PASS]
+TEST 020: V-Line length=15                    | In: (41,10)->(41,25)                     | Pixels: Got   16 / Exp   16 | [PASS]
+TEST 021: V-Line length=25                    | In: (42,10)->(42,35)                     | Pixels: Got   26 / Exp   26 | [PASS]
+TEST 022: V-Line length=40                    | In: (43,10)->(43,50)                     | Pixels: Got   41 / Exp   41 | [PASS]
+TEST 023: V-Line length=60                    | In: (44,10)->(44,70)                     | Pixels: Got   61 / Exp   61 | [PASS]
+TEST 024: V-Line length=80                    | In: (45,10)->(45,90)                     | Pixels: Got   81 / Exp   81 | [PASS]
+TEST 025: V-Line length=120                   | In: (46,10)->(46,130)                    | Pixels: Got  121 / Exp  121 | [PASS]
+TEST 026: V-Line length=160                   | In: (47,10)->(47,170)                    | Pixels: Got  161 / Exp  161 | [PASS]
+TEST 027: V-Line length=220                   | In: (48,10)->(48,230)                    | Pixels: Got  221 / Exp  221 | [PASS]
+TEST 028: V-Line length=300                   | In: (49,10)->(49,310)                    | Pixels: Got  301 / Exp  301 | [PASS]
+TEST 029: V-Line length=380                   | In: (50,10)->(50,390)                    | Pixels: Got  381 / Exp  381 | [PASS]
+TEST 030: V-Line length=450                   | In: (51,10)->(51,460)                    | Pixels: Got  451 / Exp  451 | [PASS]
+
+>>> CATEGORY: Diagonal Lines (45-deg) <<<
+
+TEST 031: Diag Line length=1                  | In: (101,100)->(100,101)                 | Pixels: Got    2 / Exp    2 | [PASS]
+TEST 032: Diag Line length=3                  | In: (100,100)->(103,103)                 | Pixels: Got    4 / Exp    4 | [PASS]
+TEST 033: Diag Line length=7                  | In: (107,107)->(100,100)                 | Pixels: Got    8 / Exp    8 | [PASS]
+TEST 034: Diag Line length=12                 | In: (100,112)->(112,100)                 | Pixels: Got   13 / Exp   13 | [PASS]
+TEST 035: Diag Line length=18                 | In: (118,100)->(100,118)                 | Pixels: Got   19 / Exp   19 | [PASS]
+TEST 036: Diag Line length=25                 | In: (100,100)->(125,125)                 | Pixels: Got   26 / Exp   26 | [PASS]
+TEST 037: Diag Line length=35                 | In: (135,135)->(100,100)                 | Pixels: Got   36 / Exp   36 | [PASS]
+TEST 038: Diag Line length=50                 | In: (100,150)->(150,100)                 | Pixels: Got   51 / Exp   51 | [PASS]
+TEST 039: Diag Line length=70                 | In: (170,100)->(100,170)                 | Pixels: Got   71 / Exp   71 | [PASS]
+TEST 040: Diag Line length=90                 | In: (100,100)->(190,190)                 | Pixels: Got   91 / Exp   91 | [PASS]
+TEST 041: Diag Line length=120                | In: (220,220)->(100,100)                 | Pixels: Got  121 / Exp  121 | [PASS]
+TEST 042: Diag Line length=150                | In: (100,250)->(250,100)                 | Pixels: Got  151 / Exp  151 | [PASS]
+TEST 043: Diag Line length=200                | In: (300,100)->(100,300)                 | Pixels: Got  201 / Exp  201 | [PASS]
+TEST 044: Diag Line length=250                | In: (100,100)->(350,350)                 | Pixels: Got  251 / Exp  251 | [PASS]
+TEST 045: Diag Line length=300                | In: (400,400)->(100,100)                 | Pixels: Got  301 / Exp  301 | [PASS]
+
+>>> CATEGORY: Shallow Slopes (|dx| > |dy|) <<<
+
+TEST 046: Shallow Line dx=20 dy=3             | In: (50,50)->(70,47)                     | Pixels: Got   21 / Exp   21 | [PASS]
+TEST 047: Shallow Line dx=35 dy=5             | In: (50,60)->(15,65)                     | Pixels: Got   36 / Exp   36 | [PASS]
+TEST 048: Shallow Line dx=50 dy=7             | In: (50,70)->(100,77)                    | Pixels: Got   51 / Exp   51 | [PASS]
+TEST 049: Shallow Line dx=65 dy=9             | In: (50,80)->(-15,71)                    | Pixels: Got   66 / Exp   66 | [PASS]
+TEST 050: Shallow Line dx=80 dy=11            | In: (50,90)->(130,101)                   | Pixels: Got   81 / Exp   81 | [PASS]
+TEST 051: Shallow Line dx=95 dy=13            | In: (50,100)->(-45,113)                  | Pixels: Got   96 / Exp   96 | [PASS]
+TEST 052: Shallow Line dx=110 dy=15           | In: (50,110)->(160,95)                   | Pixels: Got  111 / Exp  111 | [PASS]
+TEST 053: Shallow Line dx=125 dy=17           | In: (50,120)->(-75,137)                  | Pixels: Got  126 / Exp  126 | [PASS]
+TEST 054: Shallow Line dx=140 dy=19           | In: (50,130)->(190,149)                  | Pixels: Got  141 / Exp  141 | [PASS]
+TEST 055: Shallow Line dx=155 dy=21           | In: (50,140)->(-105,119)                 | Pixels: Got  156 / Exp  156 | [PASS]
+TEST 056: Shallow Line dx=170 dy=23           | In: (50,150)->(220,173)                  | Pixels: Got  171 / Exp  171 | [PASS]
+TEST 057: Shallow Line dx=185 dy=25           | In: (50,160)->(-135,185)                 | Pixels: Got  186 / Exp  186 | [PASS]
+TEST 058: Shallow Line dx=200 dy=27           | In: (50,170)->(250,143)                  | Pixels: Got  201 / Exp  201 | [PASS]
+TEST 059: Shallow Line dx=215 dy=29           | In: (50,180)->(-165,209)                 | Pixels: Got  216 / Exp  216 | [PASS]
+TEST 060: Shallow Line dx=230 dy=31           | In: (50,190)->(280,221)                  | Pixels: Got  231 / Exp  231 | [PASS]
+TEST 061: Shallow Line dx=245 dy=33           | In: (50,200)->(-195,167)                 | Pixels: Got  246 / Exp  246 | [PASS]
+TEST 062: Shallow Line dx=260 dy=35           | In: (50,210)->(310,245)                  | Pixels: Got  261 / Exp  261 | [PASS]
+TEST 063: Shallow Line dx=275 dy=37           | In: (50,220)->(-225,257)                 | Pixels: Got  276 / Exp  276 | [PASS]
+TEST 064: Shallow Line dx=290 dy=39           | In: (50,230)->(340,191)                  | Pixels: Got  291 / Exp  291 | [PASS]
+TEST 065: Shallow Line dx=305 dy=41           | In: (50,240)->(-255,281)                 | Pixels: Got  306 / Exp  306 | [PASS]
+
+>>> CATEGORY: Steep Slopes (|dy| > |dx|) <<<
+
+TEST 066: Steep Line dx=3 dy=20               | In: (100,50)->(103,30)                   | Pixels: Got   21 / Exp   21 | [PASS]
+TEST 067: Steep Line dx=5 dy=32               | In: (115,50)->(110,82)                   | Pixels: Got   33 / Exp   33 | [PASS]
+TEST 068: Steep Line dx=7 dy=44               | In: (130,50)->(137,94)                   | Pixels: Got   45 / Exp   45 | [PASS]
+TEST 069: Steep Line dx=9 dy=56               | In: (145,50)->(136,-6)                   | Pixels: Got   57 / Exp   57 | [PASS]
+TEST 070: Steep Line dx=11 dy=68              | In: (160,50)->(171,118)                  | Pixels: Got   69 / Exp   69 | [PASS]
+TEST 071: Steep Line dx=13 dy=80              | In: (175,50)->(162,130)                  | Pixels: Got   81 / Exp   81 | [PASS]
+TEST 072: Steep Line dx=15 dy=92              | In: (190,50)->(205,-42)                  | Pixels: Got   93 / Exp   93 | [PASS]
+TEST 073: Steep Line dx=17 dy=104             | In: (205,50)->(188,154)                  | Pixels: Got  105 / Exp  105 | [PASS]
+TEST 074: Steep Line dx=19 dy=116             | In: (220,50)->(239,166)                  | Pixels: Got  117 / Exp  117 | [PASS]
+TEST 075: Steep Line dx=21 dy=128             | In: (235,50)->(214,-78)                  | Pixels: Got  129 / Exp  129 | [PASS]
+TEST 076: Steep Line dx=23 dy=140             | In: (250,50)->(273,190)                  | Pixels: Got  141 / Exp  141 | [PASS]
+TEST 077: Steep Line dx=25 dy=152             | In: (265,50)->(240,202)                  | Pixels: Got  153 / Exp  153 | [PASS]
+TEST 078: Steep Line dx=27 dy=164             | In: (280,50)->(307,-114)                 | Pixels: Got  165 / Exp  165 | [PASS]
+TEST 079: Steep Line dx=29 dy=176             | In: (295,50)->(266,226)                  | Pixels: Got  177 / Exp  177 | [PASS]
+TEST 080: Steep Line dx=31 dy=188             | In: (310,50)->(341,238)                  | Pixels: Got  189 / Exp  189 | [PASS]
+TEST 081: Steep Line dx=33 dy=200             | In: (325,50)->(292,-150)                 | Pixels: Got  201 / Exp  201 | [PASS]
+TEST 082: Steep Line dx=35 dy=212             | In: (340,50)->(375,262)                  | Pixels: Got  213 / Exp  213 | [PASS]
+TEST 083: Steep Line dx=37 dy=224             | In: (355,50)->(318,274)                  | Pixels: Got  225 / Exp  225 | [PASS]
+TEST 084: Steep Line dx=39 dy=236             | In: (370,50)->(409,-186)                 | Pixels: Got  237 / Exp  237 | [PASS]
+TEST 085: Steep Line dx=41 dy=248             | In: (385,50)->(344,298)                  | Pixels: Got  249 / Exp  249 | [PASS]
+
+>>> CATEGORY: Degenerate / Boundary Points <<<
+
+TEST 086: Single Point (0,0)                  | In: (0,0)->(0,0)                         | Pixels: Got    1 / Exp    1 | [PASS]
+TEST 087: Single Point (639,0)                | In: (639,0)->(639,0)                     | Pixels: Got    1 / Exp    1 | [PASS]
+TEST 088: Single Point (0,479)                | In: (0,479)->(0,479)                     | Pixels: Got    1 / Exp    1 | [PASS]
+TEST 089: Single Point (639,479)              | In: (639,479)->(639,479)                 | Pixels: Got    1 / Exp    1 | [PASS]
+TEST 090: Single Point (320,240)              | In: (320,240)->(320,240)                 | Pixels: Got    1 / Exp    1 | [PASS]
+TEST 091: Single Point (10,10)                | In: (10,10)->(10,10)                     | Pixels: Got    1 / Exp    1 | [PASS]
+TEST 092: Single Point (50,50)                | In: (50,50)->(50,50)                     | Pixels: Got    1 / Exp    1 | [PASS]
+TEST 093: Single Point (100,100)              | In: (100,100)->(100,100)                 | Pixels: Got    1 / Exp    1 | [PASS]
+TEST 094: Single Point (200,200)              | In: (200,200)->(200,200)                 | Pixels: Got    1 / Exp    1 | [PASS]
+TEST 095: Single Point (500,400)              | In: (500,400)->(500,400)                 | Pixels: Got    1 / Exp    1 | [PASS]
+
+>>> CATEGORY: Triangle Outlines <<<
+
+TEST 096: Triangle size=15                    | In: (50,50)->(65,57)->(55,65)            | Pixels: Got   43 / Exp   43 | [PASS]
+TEST 097: Triangle size=27                    | In: (60,58)->(87,71)->(69,85)            | Pixels: Got   75 / Exp   75 | [PASS]
+TEST 098: Triangle size=39                    | In: (70,66)->(109,85)->(83,105)          | Pixels: Got  107 / Exp  107 | [PASS]
+TEST 099: Triangle size=51                    | In: (80,74)->(131,99)->(97,125)          | Pixels: Got  139 / Exp  139 | [PASS]
+TEST 100: Triangle size=63                    | In: (90,82)->(153,113)->(111,145)        | Pixels: Got  171 / Exp  171 | [PASS]
+TEST 101: Triangle size=75                    | In: (100,90)->(175,127)->(125,165)       | Pixels: Got  203 / Exp  203 | [PASS]
+TEST 102: Triangle size=87                    | In: (110,98)->(197,141)->(139,185)       | Pixels: Got  235 / Exp  235 | [PASS]
+TEST 103: Triangle size=99                    | In: (120,106)->(219,155)->(153,205)      | Pixels: Got  267 / Exp  267 | [PASS]
+TEST 104: Triangle size=111                   | In: (130,114)->(241,169)->(167,225)      | Pixels: Got  299 / Exp  299 | [PASS]
+TEST 105: Triangle size=123                   | In: (140,122)->(263,183)->(181,245)      | Pixels: Got  331 / Exp  331 | [PASS]
+TEST 106: Triangle size=135                   | In: (150,130)->(285,197)->(195,265)      | Pixels: Got  363 / Exp  363 | [PASS]
+TEST 107: Triangle size=147                   | In: (160,138)->(307,211)->(209,285)      | Pixels: Got  395 / Exp  395 | [PASS]
+TEST 108: Triangle size=159                   | In: (170,146)->(329,225)->(223,305)      | Pixels: Got  427 / Exp  427 | [PASS]
+TEST 109: Triangle size=171                   | In: (180,154)->(351,239)->(237,325)      | Pixels: Got  459 / Exp  459 | [PASS]
+TEST 110: Triangle size=183                   | In: (190,162)->(373,253)->(251,345)      | Pixels: Got  491 / Exp  491 | [PASS]
+TEST 111: Triangle size=195                   | In: (200,170)->(395,267)->(265,365)      | Pixels: Got  523 / Exp  523 | [PASS]
+TEST 112: Triangle size=207                   | In: (210,178)->(417,281)->(279,385)      | Pixels: Got  555 / Exp  555 | [PASS]
+TEST 113: Triangle size=219                   | In: (220,186)->(439,295)->(293,405)      | Pixels: Got  587 / Exp  587 | [PASS]
+TEST 114: Triangle size=231                   | In: (230,194)->(461,309)->(307,425)      | Pixels: Got  619 / Exp  619 | [PASS]
+TEST 115: Triangle size=243                   | In: (240,202)->(483,323)->(321,445)      | Pixels: Got  651 / Exp  651 | [PASS]
+
+>>> CATEGORY: Randomized Stress Lines/Triangles <<<
+
+TEST 116: Random Line #1                      | In: (448,174)->(487,70)                  | Pixels: Got  105 / Exp  105 | [PASS]
+TEST 117: Random Tri #2                       | In: (358,379)->(16,58)->(129,131)        | Pixels: Got  706 / Exp  706 | [PASS]
+TEST 118: Random Line #3                      | In: (472,36)->(118,109)                  | Pixels: Got  355 / Exp  355 | [PASS]
+TEST 119: Random Tri #4                       | In: (321,229)->(383,120)->(360,130)      | Pixels: Got  234 / Exp  234 | [PASS]
+TEST 120: Random Line #5                      | In: (161,261)->(299,328)                 | Pixels: Got  139 / Exp  139 | [PASS]
+TEST 121: Random Tri #6                       | In: (422,11)->(120,10)->(405,119)        | Pixels: Got  698 / Exp  698 | [PASS]
+TEST 122: Random Line #7                      | In: (69,363)->(348,174)                  | Pixels: Got  280 / Exp  280 | [PASS]
+TEST 123: Random Tri #8                       | In: (404,52)->(226,313)->(485,223)       | Pixels: Got  694 / Exp  694 | [PASS]
+TEST 124: Random Line #9                      | In: (439,196)->(198,249)                 | Pixels: Got  242 / Exp  242 | [PASS]
+TEST 125: Random Tri #10                      | In: (121,189)->(363,298)->(149,303)      | Pixels: Got  573 / Exp  573 | [PASS]
+
+================================================================================
+                          VERIFICATION SUMMARY REPORT                           
+================================================================================
+  TOTAL TEST CASES RUN : 125
+  TOTAL PASSED         : 125
+  TOTAL FAILED         : 0
+  PASS RATE            : 100.00%
+  OVERALL STATUS       : *** ALL 125 TESTCASES PASSED PERFECTLY (100% SUCCESS) ***
+================================================================================

@@ -4,7 +4,7 @@
 // Instantiates:
 //   • axi_interconnect_wrap_4x11 (4 masters × 11 slaves)
 //   • Masters (interconnect slave ports S00–S03)
-//       S00  veer_el2_stub    – VeeR EL2 RV32IMC CPU
+//       S00  veer_el2_top     – VeeR EL2 RV32IMC CPU Core
 //       S01  ar_read_master   – AR engine vertex/primitive read path
 //       S02  ar_write_master  – AR engine pixel write path
 //       S03  vga_controller   – VGA framebuffer read + display driver
@@ -1322,11 +1322,12 @@ axi_interconnect_wrap_4x11 #(
 // =============================================================================
 
 // ---- S00: VeeR EL2 CPU ----
-veer_el2_stub #(
+veer_el2_top #(
     .DATA_WIDTH (DATA_WIDTH),
     .ADDR_WIDTH (ADDR_WIDTH),
     .STRB_WIDTH (STRB_WIDTH),
-    .ID_WIDTH   (ID_WIDTH)
+    .ID_WIDTH   (ID_WIDTH),
+    .BOOT_ADDR  (32'h3000_0000)
 ) u_veer (
     .clk            (clk),
     .rst_l          (~sys_reset_active),

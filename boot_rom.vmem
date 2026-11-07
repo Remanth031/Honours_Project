@@ -1,7 +1,1 @@
-// Boot ROM content – jump to Data Memory 0x0000_0000
-// 0x00: lui  x1, 0x00000
-// 0x04: jalr x0, 0(x1)
-000000b7
-00008067
-00000013
-00000013
+rtl/peripherals/boot_rom.vmem

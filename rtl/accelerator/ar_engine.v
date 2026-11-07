@@ -192,8 +192,8 @@ module ar_engine #(
     wire signed [31:0] bi_abs_dy = bi_raw_dy[31] ? (-bi_raw_dy) : bi_raw_dy;
     wire               bi_steep  = (bi_abs_dy > bi_abs_dx);
     wire signed [31:0] bi_err    = bi_steep
-                                  ? (bi_abs_dx - (bi_abs_dy >>> 1))
-                                  : (bi_abs_dy - (bi_abs_dx >>> 1));
+                                  ? ((bi_abs_dx << 1) - bi_abs_dy)
+                                  : ((bi_abs_dy << 1) - bi_abs_dx);
 
     // =========================================================================
     // Main synchronous process
@@ -344,21 +344,20 @@ module ar_engine #(
                                     if (!b_steep) begin
                                         // Shallow: primary axis is X
                                         b_cx  <= b_cx + (b_sx ? 32'sd1 : -32'sd1);
-                                        if ((b_err << 1) >= -b_dy) begin
-                                            // No Y step needed this iteration
-                                            b_err <= b_err + b_dy;
-                                        end else begin
+                                        if (b_err >= 0) begin
                                             b_cy  <= b_cy + (b_sy ? 32'sd1 : -32'sd1);
-                                            b_err <= b_err + b_dy - b_dx;
+                                            b_err <= b_err + (b_dy << 1) - (b_dx << 1);
+                                        end else begin
+                                            b_err <= b_err + (b_dy << 1);
                                         end
                                     end else begin
                                         // Steep: primary axis is Y
                                         b_cy  <= b_cy + (b_sy ? 32'sd1 : -32'sd1);
-                                        if ((b_err << 1) >= -b_dx) begin
-                                            b_err <= b_err + b_dx;
-                                        end else begin
+                                        if (b_err >= 0) begin
                                             b_cx  <= b_cx + (b_sx ? 32'sd1 : -32'sd1);
-                                            b_err <= b_err + b_dx - b_dy;
+                                            b_err <= b_err + (b_dx << 1) - (b_dy << 1);
+                                        end else begin
+                                            b_err <= b_err + (b_dx << 1);
                                         end
                                     end
                                     rast_sub <= RS_PIXEL;

@@ -1,0 +1,49 @@
+# ============================================================
+# Git Ignore File for RISC-V SoC & UVM Verification
+# ============================================================
+
+# VCS / Synopsys Executables & Generated Files
+simv
+simv.*
+simv_*
+simv.daidir/
+*.daidir/
+csrc/
+vc_hdrs.h
+ucli.key
+verdi_config_file
+DVEfiles/
+
+# Simulation Waveforms & Logs
+*.vpd
+*.fsdb
+*.vcd
+*.wlf
+*.log
+sim/build/
+sim/waves/
+sim/logs/
+
+# UVM Simulation Artifacts
+uvm/simv*
+uvm/*.daidir/
+uvm/csrc/
+uvm/*.vcd
+uvm/*.fsdb
+uvm/*.log
+uvm/ucli.key
+uvm/vc_hdrs.h
+uvm/verdi_config_file
+uvm/tr_db.log
+
+# C++ Compiled Binaries
+tb/cpp/test_bresenham
+tb/cpp/verify_ar_engine
+
+# Temporary & Editor Files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store

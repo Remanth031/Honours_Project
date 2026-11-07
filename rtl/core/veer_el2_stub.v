@@ -4,8 +4,8 @@
 // Accesses: Data Memory, Framebuffer, AR Control, HPM, VGA Ctrl Regs
 //
 // This is a stub that models the AXI4 master port of the VeeR EL2 core.
-// In the real design, replace this with the actual VeeR EL2 core instance.
-// The port names match the VeeR EL2 SoC integration guide (dma/lsu axi ports).
+// The actual full VeeR EL2 core implementation is integrated in veer_el2_top.sv.
+// This stub is retained as a lightweight simulation/tie-off fallback if needed.
 // =============================================================================
 // Language: Verilog 2001
 `resetall
